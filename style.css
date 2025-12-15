@@ -304,19 +304,19 @@ section .button button:hover{
 }
 @keyframes words {
 	0%, 20% {
-		content: 'Data Analist';
+		content: 'Aspiring Data Analyst';
 	}
 	21%, 40% {
-		content: 'Software and Web Developer';
+		content: 'Aspiring Data Scientist';
 	}
 	41%, 60% {
-		content: 'Web Designer';
+		content: 'Aspiring Software Engineer';
 	}
 	61%, 80% {
-		content: 'System Analyst';
+		content: 'Aspiring System Analyst';
 	}
 	81%, 100% {
-		content: 'Database Administrator';
+		content: 'Aspiring Database Administrator';
 	}
 }
 
@@ -371,43 +371,49 @@ section .button button:hover{
 }
 
 .services-container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	align-items: center;
-	gap: 2.5rem;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
 }
+
+
 .service-box {
-	background-color: var(--main-color);
-	height: 300px;
-	border-radius: 3rem;
-	cursor: pointer;
-	transition: 0.3s ease;
+background: var(--main-color);
+padding: 2rem;
+border-radius: 2rem;
 }
-.service-box:hover {
-	background: transparent;
-	color: var(--text-color);
-	transform: scale(1.03);
-	border: 1px solid var(--main-color);
+
+
+.skills-container {
+max-width: 800px;
+margin: auto;
 }
-.service-box .service.info {
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-	max-height: 200px;
-	justify-content: center;
-	align-items: center;
-	padding: 5em;
+
+
+.skill {
+margin-bottom: 1.5rem;
 }
-.service-info h4 {
-	font-size: 2.5rem;
-	font-weight: 500;
-	margin-bottom: 1rem;
+
+
+.progress {
+background: #333;
+height: 12px;
+border-radius: 20px;
 }
-.service-info p{
-	font-size: 1.6rem;
-	font-weight: 400;
-	max-height: 100px;
-	margin: auto;
+
+
+.progress div {
+height: 100%;
+width: 0;
+background: linear-gradient(90deg, var(--main-color), #9b6de5);
+border-radius: 20px;
+animation: fillBar 2s forwards;
+}
+
+
+@keyframes fillBar {
+to { width: var(--level); }
+	
 }
 @media (max-width:991px){
 	section {
@@ -608,6 +614,51 @@ section .button button:hover{
 	margin-bottom: 3rem;
 	color: white;
 }
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info .info-box {
+  background: var(--second-bg-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 15px var(--main-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info .info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.contact-info .info-box i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.contact-info .info-box h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info .info-box p {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
 .contact form {
 	max-width: 70rem;
 	margin: 1rem auto;
@@ -718,5 +769,300 @@ section .button button:hover{
 		}
 		
 	}
+	
+	
 
+}
+.projects {
+  padding: 8rem 9%;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.project-card {
+  background: #1e1e1e;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px var(--main-color);
+}
+
+.project-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+.project-card p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-card .tech {
+  font-size: 1.3rem;
+  color: #aaa;
+}
+/* ABOUT SECTION */
+.about {
+  background: var(--second-bg-color);
+  padding: 8rem 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .content {
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.about .title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about .title span {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--main-color);
+  position: relative;
+}
+
+.about .about-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  align-items: center;
+}
+
+.about .center {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.about .about-img {
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about .about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px var(--main-color);
+}
+
+.about .text-content {
+  flex: 2 1 400px;
+  color: var(--text-color);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.about .text-content .topic {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
+}
+
+.about .text-content p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about .button {
+  margin-top: 1.5rem;
+}
+
+.about .button .btn {
+  padding: 1rem 2.8rem;
+  font-size: 1.6rem;
+  border-radius: 4rem;
+  border: 2px solid var(--main-color);
+  background: var(--bg-color);
+  color: var(--main-color);
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.about .button .btn:hover {
+  background: var(--main-color);
+  color: var(--text-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 995px) {
+  .about .content {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 3%;
+  }
+
+  .about .text-content {
+    text-align: center;
+  }
+
+  .about .about-img {
+    width: 200px;
+  }
+}
+/* INITIAL STATE FOR SCROLL ANIMATION */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* WHEN VISIBLE */
+.scroll-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.experience {
+  background: var(--second-bg-color);
+  padding: 5rem 9%;
+}
+
+.experience .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience .timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: var(--main-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.experience .container {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.experience .container::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--main-color);
+  border-radius: 50%;
+  top: 15px;
+  right: -10px;
+  z-index: 1;
+}
+
+.experience .left {
+  left: 0;
+}
+
+.experience .right {
+  left: 50%;
+}
+
+.experience .left::before,
+.experience .right::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.experience .left::before {
+  right: 30px;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent var(--main-color);
+}
+
+.experience .right::before {
+  left: -20px;
+  border-width: 10px 20px 10px 0;
+  border-color: transparent var(--main-color) transparent transparent;
+}
+
+.experience .content-box {
+  background: var(--main-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.experience .content-box h3 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.experience .content-box .date {
+  font-size: 1.3rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.experience .content-box p {
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .experience .container {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .experience .left,
+  .experience .right {
+    left: 0;
+  }
+
+  .experience .left::before,
+  .experience .right::before {
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--main-color) transparent transparent;
+  }
+
+  .experience .timeline::after {
+    left: 30px;
+  }
 }
