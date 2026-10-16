@@ -1,0 +1,38 @@
+.project-showcase{background:radial-gradient(ellipse at 50% 35%,#363547,#16191f 65%);color:#f5f2ed;border-radius:30px;padding:28px 25px 22px;box-shadow:var(--raised);overflow:hidden;margin-bottom:28px}
+.showcase-heading,.showcase-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:9px;letter-spacing:.12em;color:#bdc0c9}
+.showcase-stage{height:440px;position:relative;perspective:1400px;touch-action:pan-y;margin:12px -25px 0;isolation:isolate;overflow:hidden}
+.showcase-poster{--position:0;--distance:0;position:absolute;left:50%;top:42px;width:370px;height:350px;padding:0;border:1px solid #ffffff30;border-radius:18px;background:#252731;color:#fff;overflow:hidden;cursor:pointer;text-align:left;font:inherit;transform:translateX(calc(-50% + var(--position)*210px)) translateZ(calc(var(--distance)*-110px)) rotateY(calc(var(--position)*-17deg)) scale(calc(1 - var(--distance)*.07));filter:brightness(calc(1 - var(--distance)*.19));opacity:calc(1 - var(--distance)*.17);box-shadow:0 30px 40px #0008;transition:transform .75s cubic-bezier(.22,.8,.25,1),filter .6s,opacity .6s}
+.showcase-poster.is-active{border-color:#ffffff90;box-shadow:0 30px 55px #000a,0 0 55px #8e78b725}
+.showcase-poster .project-art{height:300px;aspect-ratio:auto;border:0;border-radius:0;padding:26px;box-shadow:none;pointer-events:none}
+.showcase-poster .project-art strong{font-size:39px}
+.showcase-caption{display:flex;align-items:center;height:50px;padding:0 17px;font-size:12px;font-weight:600;letter-spacing:-.02em;background:#22252d;color:#f7f5f0}
+.showcase-poster .recruitment{padding:20px;background:linear-gradient(125deg,#342347,#685190)}
+.showcase-poster .recruitment-heading{margin-bottom:15px}
+.showcase-poster .recruitment-heading strong{font-size:40px;margin-top:10px}
+.showcase-poster .recruitment-heading p{font-size:14px;color:#eee4ff;line-height:1.3;margin-top:7px}
+.showcase-poster .poster-arrow{width:32px;height:32px;font-size:21px}
+.showcase-poster .recruitment .art-top{font-size:6px;letter-spacing:.08em}
+.showcase-poster .browser-toolbar{padding:6px 9px}.showcase-poster .browser-toolbar b{font-size:6px}
+.showcase-poster .recruitment-caption{font-size:6px;letter-spacing:.04em;margin-top:12px}
+.showcase-poster .screenshot-browser{border-radius:5px}
+.showcase-poster .art-top{font-size:8px}.showcase-poster .mini-browser strong{font-size:34px}
+.showcase-controls{display:flex;justify-content:center;align-items:center;gap:23px;margin-bottom:22px}
+.showcase-controls>button,.showcase-play{border:1px solid #ffffff30;color:#fff;background:#ffffff0d;border-radius:50%;width:44px;height:44px;font:inherit;font-size:22px;cursor:pointer;transition:background .2s}
+.showcase-controls>button:hover,.showcase-play:hover{background:#ffffff26}
+.showcase-dots{display:flex;gap:9px;align-items:center}
+.showcase-dots button{width:24px;height:32px;border:0;background:transparent;cursor:pointer;position:relative}
+.showcase-dots button::after{content:'';position:absolute;left:8px;top:12px;width:8px;height:8px;border-radius:50%;background:#747887;transition:background .2s,transform .2s}
+.showcase-dots button[aria-current=true]::after{background:#c1a9fa;transform:scale(1.35)}
+.showcase-play{width:auto;height:36px;padding:0 14px;border-radius:20px;font-size:10px;letter-spacing:0;white-space:nowrap}
+.project-showcase button:focus-visible{outline:3px solid #c8b6fc;outline-offset:4px}
+.showcase-bottom{border-top:1px solid #ffffff1c;padding-top:17px;letter-spacing:.04em;min-height:54px}
+.showcase-status{font-size:11px;line-height:1.5}
+.has-carousel .projects-grid{display:block}
+.has-carousel .projects-grid>.project-card[hidden]{display:none!important}
+.has-carousel .projects-grid>.project-card{padding:28px 32px;transform:none;box-shadow:var(--inset);border-radius:24px}
+.has-carousel .projects-grid>.project-card>.project-art{display:none}
+.has-carousel .project-cat{margin-top:0}
+.has-carousel .project-card>p{max-width:950px}
+@media(max-width:700px){.project-showcase{padding:22px 16px 18px;border-radius:24px}.showcase-heading{font-size:7px;gap:12px}.showcase-stage{height:350px;margin:5px -16px 0}.showcase-poster{width:270px;height:285px;top:28px;transform:translateX(calc(-50% + var(--position)*155px)) translateZ(calc(var(--distance)*-120px)) rotateY(calc(var(--position)*-19deg)) scale(calc(1 - var(--distance)*.08))}.showcase-poster .project-art{height:240px;padding:20px}.showcase-caption{height:45px;font-size:10px;padding:0 12px}.showcase-poster .project-art strong{font-size:31px}.showcase-poster .recruitment{padding:15px}.showcase-poster .recruitment-heading{margin-bottom:10px}.showcase-poster .recruitment-heading strong{font-size:32px}.showcase-poster .recruitment-heading p{font-size:11px}.showcase-poster .recruitment .art-top{font-size:5px}.showcase-poster .recruitment-caption{font-size:5px;margin-top:8px}.showcase-controls{gap:10px}.showcase-dots{gap:0}.showcase-bottom{align-items:flex-start}.showcase-status{font-size:9px}.has-carousel .projects-grid>.project-card{padding:24px 20px}.showcase-poster .playing-cards span{height:65px}.showcase-poster .bubble{font-size:19px}.showcase-poster .reply{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.showcase-poster,.showcase-dots button::after{transition:none}}
+body.motion-paused .showcase-poster{transition:none}
