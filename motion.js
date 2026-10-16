@@ -10,7 +10,7 @@
   function update() {
     document.body.classList.toggle('motion-paused', paused);
     button.setAttribute('aria-pressed', String(paused));
-    button.innerHTML = paused ? 'Play motion <span aria-hidden="true">▷</span>' : 'Pause motion <span aria-hidden="true">Ⅱ</span>';
+    button.innerHTML = paused ? 'Play motion <span class="mobile-hide-symbol" aria-hidden="true">▷</span>' : 'Pause motion <span class="mobile-hide-symbol" aria-hidden="true">Ⅱ</span>';
     if (paused) {
       cards.forEach(reset);
       document.querySelectorAll('.is-pending').forEach(el => el.classList.remove('is-pending'));

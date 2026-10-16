@@ -10,7 +10,7 @@
   shell.setAttribute('role', 'region');
   shell.setAttribute('aria-roledescription', 'carousel');
   shell.setAttribute('aria-label', 'Selected projects');
-  shell.innerHTML = '<div class="showcase-heading"><span>THE PROJECT COLLECTION</span><span>SOFTWARE / DATA / SYSTEMS</span></div><div class="showcase-stage" aria-label="Project posters"></div><div class="showcase-controls"><button type="button" class="showcase-prev" aria-label="Previous project">←</button><div class="showcase-dots" aria-label="Choose a project"></div><button type="button" class="showcase-next" aria-label="Next project">→</button></div><div class="showcase-bottom"><span class="showcase-status" aria-live="polite" aria-atomic="true"></span><button type="button" class="showcase-play" aria-pressed="false">Play slideshow ▷</button></div>';
+  shell.innerHTML = '<div class="showcase-heading"><span>THE PROJECT COLLECTION</span><span>SOFTWARE / DATA / SYSTEMS</span></div><div class="showcase-stage" aria-label="Project posters"></div><div class="showcase-controls"><button type="button" class="showcase-prev" aria-label="Previous project"><span class="mobile-hide-symbol" aria-hidden="true">←</span><span class="mobile-control-label">Prev</span></button><div class="showcase-dots" aria-label="Choose a project"></div><button type="button" class="showcase-next" aria-label="Next project"><span class="mobile-hide-symbol" aria-hidden="true">→</span><span class="mobile-control-label">Next</span></button></div><div class="showcase-bottom"><span class="showcase-status" aria-live="polite" aria-atomic="true"></span><button type="button" class="showcase-play" aria-pressed="false">Play slideshow <span class="mobile-hide-symbol" aria-hidden="true">▷</span></button></div>';
   const stage = shell.querySelector('.showcase-stage');
   const dots = shell.querySelector('.showcase-dots');
   const status = shell.querySelector('.showcase-status');
@@ -54,13 +54,13 @@
     });
     status.textContent=`${String(active+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')} — ${cards[active].querySelector('h3').textContent}`;
   }
-  function stop() { clearInterval(timer);timer=null;play.textContent='Play slideshow ▷';play.setAttribute('aria-pressed','false'); }
+  function stop() { clearInterval(timer);timer=null;play.innerHTML='Play slideshow <span class="mobile-hide-symbol" aria-hidden="true">▷</span>';play.setAttribute('aria-pressed','false'); }
   shell.querySelector('.showcase-prev').addEventListener('click',()=>{stop();select(active-1);});
   shell.querySelector('.showcase-next').addEventListener('click',()=>{stop();select(active+1);});
   play.addEventListener('click',()=>{
     if(timer){stop();return;}
     timer=setInterval(()=>select(active+1),5000);
-    play.textContent='Pause slideshow Ⅱ';play.setAttribute('aria-pressed','true');
+    play.innerHTML='Pause slideshow <span class="mobile-hide-symbol" aria-hidden="true">Ⅱ</span>';play.setAttribute('aria-pressed','true');
   });
   shell.addEventListener('keydown',event=>{
     if(event.key==='ArrowRight'||event.key==='ArrowLeft') {event.preventDefault();stop();select(active+(event.key==='ArrowRight'?1:-1));}
