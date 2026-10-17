@@ -1,0 +1,18 @@
+/* Small folder-shaped links inspired by the blue folder reference. */
+.folder-files{gap:28px 18px;margin-top:28px}
+.folder-files>a{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:12px;min-height:140px;padding:22px 19px 18px;border:0;border-radius:10px 15px 16px 16px;background:linear-gradient(145deg,#329cc6,#176e99);box-shadow:5px 10px 17px #1c4c6b25;transform:none;color:#073449;overflow:visible;perspective:600px}
+.folder-files>a::before{content:'';position:absolute;z-index:-1;left:0;top:-13px;width:44%;height:28px;border-radius:10px 12px 0 0;background:#329cc6;border-top:1px solid #7ed0ed;transition:transform .3s}
+.folder-files>a::after{content:'';position:absolute;z-index:0;inset:17px -1px -1px;border-radius:10px 13px 16px 16px;background:linear-gradient(135deg,#8bdef4,#3ab5df 55%,#239aca);border:1px solid #a2e1f1;box-shadow:inset 1px 2px 2px #ffffff6b;transform-origin:bottom;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.folder-files>a>span{position:relative;z-index:1;pointer-events:none}
+.folder-files .file-number{align-self:flex-end;font-size:10px;letter-spacing:.07em;color:#164a63;font-weight:600}
+.folder-files strong{font-size:17px;line-height:1.2;letter-spacing:-.025em;color:#073449}
+.folder-files small{font-size:10px;line-height:1.5;max-width:180px;color:#15465a;margin-top:6px}
+.folder-files>a:hover{background:linear-gradient(145deg,#329cc6,#176e99);transform:translateY(-3px);color:#073449;box-shadow:6px 15px 22px #1c4c6b35}
+.folder-files>a:hover::after,.folder-files>a:focus-visible::after{transform:rotateX(-10deg);box-shadow:inset 1px 2px 2px #ffffff80,0 5px 10px #15435e25}
+.folder-files>a:focus-visible{outline:3px solid #174f6c;outline-offset:6px}
+.folder-socials{margin-top:25px}
+.visitor-summary{display:flex;gap:9px;align-items:center;font-size:11px;color:var(--muted)}
+.visitor-summary strong{font-size:15px;color:var(--text)}
+.visitor-summary[hidden]{display:none}
+@media(max-width:650px){.folder-files{gap:25px 13px}.folder-files>a{padding:18px 14px 16px;min-height:132px}.folder-files strong{font-size:16px}.folder-files small{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.folder-files>a,.folder-files>a::before,.folder-files>a::after{transition:none}.folder-files>a:hover{transform:none}.folder-files>a:hover::after{transform:none}}
