@@ -15,4 +15,14 @@
 .visitor-summary strong{font-size:15px;color:var(--text)}
 .visitor-summary[hidden]{display:none}
 @media(max-width:650px){.folder-files{gap:25px 13px}.folder-files>a{padding:18px 14px 16px;min-height:132px}.folder-files strong{font-size:16px}.folder-files small{font-size:10px}}
-@media(prefers-reduced-motion:reduce){.folder-files>a,.folder-files>a::before,.folder-files>a::after{transition:none}.folder-files>a:hover{transform:none}.folder-files>a:hover::after{transform:none}}
+@media(max-width:700px),(hover:none) and (pointer:coarse){
+  .personal-folder[open] .folder-files>a{animation:mobile-folder-float 5s ease-in-out infinite;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  .folder-files>a:nth-child(2n){animation-delay:-1.6s}
+  .folder-files>a:nth-child(3n){animation-delay:-3.2s}
+  .folder-files>a:active::after,.folder-files>a.is-opening::after{transform:rotateX(-27deg);box-shadow:inset 1px 2px 2px #ffffff80,0 8px 13px #15435e35}
+  .folder-files>a.is-opening{animation-play-state:paused;filter:brightness(1.06)}
+}
+@keyframes mobile-folder-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+body.motion-paused .folder-files>a{animation-play-state:paused!important}
+body.motion-paused .folder-files>a::after{transition:none}
+@media(prefers-reduced-motion:reduce){.personal-folder[open] .folder-files>a{animation:none}.folder-files>a,.folder-files>a::before,.folder-files>a::after{transition:none}.folder-files>a:hover{transform:none}.folder-files>a:hover::after,.folder-files>a:active::after,.folder-files>a.is-opening::after{transform:none}}
