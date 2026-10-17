@@ -1,0 +1,33 @@
+.dial-trigger{background:var(--bg);color:var(--text);border:1px solid #ffffff70;box-shadow:var(--raised-small);border-radius:22px;min-height:44px;padding:10px 17px;font:600 11px Arial,Helvetica,sans-serif;white-space:nowrap;cursor:pointer}
+.dial-trigger:hover{box-shadow:var(--inset)}
+.dial-trigger:focus-visible{outline:3px solid #326b83;outline-offset:5px}
+.dial-dialog{position:fixed;inset:0;width:min(700px,94vw);max-width:none;max-height:94dvh;height:auto;margin:auto;padding:28px 32px 22px;border:1px solid #ffffff25;border-radius:28px;background:radial-gradient(ellipse at 50% 45%,#242a30,#101316 75%);color:#f4f3ee;box-shadow:0 35px 100px #0008;overflow:auto;overscroll-behavior:contain}
+.dial-dialog::backdrop{background:#14191ac4;backdrop-filter:blur(10px)}
+.dial-top{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:.1em;color:#b8c1c8}
+.dial-close{font:11px Arial,Helvetica,sans-serif;background:#ffffff0a;color:#fff;border:1px solid #ffffff35;border-radius:22px;min-height:44px;padding:10px 16px;cursor:pointer}
+.dial-close:hover{background:#ffffff20}
+.dial-dialog h2{font-size:34px;letter-spacing:-.05em;line-height:1.1;margin-top:22px}
+.dial-intro{font-size:12px;color:#acb6bf;margin-top:10px}
+.section-wheel{width:min(510px,100%);aspect-ratio:1;position:relative;margin:15px auto}
+.dial-track{position:absolute;inset:17%;border:1px solid #ffffff12;border-radius:50%;transition:transform .85s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.dial-track::before{content:'';position:absolute;inset:15%;border:1px dashed #ffffff15;border-radius:50%}
+.dial-track i{position:absolute;left:50%;top:50%;height:8px;width:1px;background:#65727d;transform:translate(-50%,-50%) rotate(var(--tick)) translateY(clamp(-169px,-16.5vw,-50px));transform-origin:center}
+.dial-track i.major{height:15px;background:#e65b43;width:2px}
+.dial-link{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:12px;font-weight:600;color:#c4cbd0;min-width:80px;min-height:52px;border:1px solid transparent;border-radius:16px;background:#151a1de6;transition:background .25s,color .25s,border-color .25s}
+.dial-index{font-size:8px;font-weight:400;letter-spacing:.12em;color:#91a1ad}
+.dial-link:hover,.dial-link.is-selected{color:#fff;border-color:#e65b4380;background:#44302bcf}
+.dial-link.is-selected .dial-index{color:#fa9c81}
+.dial-center{position:absolute;inset:30%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px}
+.dial-number{font-size:9px;letter-spacing:.12em;color:#e79980}
+.dial-name{font-size:clamp(20px,4vw,32px);font-weight:600;letter-spacing:-.045em;line-height:1.1}
+.dial-description{font-size:10px;color:#acb6bf;line-height:1.5;max-width:160px}
+.dial-go{margin-top:5px;border-bottom:1px solid #eb7157;color:#fff;padding:8px 0;font-size:11px;min-height:34px}
+.dial-go:hover{color:#ffae98}
+.dial-hint{text-align:center;font-size:10px;letter-spacing:.06em;color:#91a1ad}
+.dial-dialog a:focus-visible,.dial-dialog button:focus-visible{outline:2px solid #ffb19c;outline-offset:4px}
+/* Keep navigation accessible while browsing long sections. */
+#navbar{position:sticky;top:12px;z-index:100;background:var(--bg)}
+@media(min-width:901px){.nav-links{gap:clamp(5px,1.6vw,24px)}nav{gap:18px}.nav-links a{padding:10px}}
+@media(max-width:900px){.nav-links{display:none}.nav-logo{display:block}.dial-trigger{margin-left:auto}}
+@media(max-width:600px){.dial-dialog{padding:20px 14px;border-radius:22px}.dial-dialog h2{font-size:28px}.dial-top{font-size:7px}.dial-close{font-size:10px;padding:9px 12px}.dial-link{font-size:10px;min-width:65px;min-height:48px;gap:3px}.dial-index{font-size:7px}.dial-center{inset:30%;gap:5px}.dial-name{font-size:21px}.dial-description{font-size:8px}.dial-go{font-size:10px}.dial-intro{font-size:11px}.dial-trigger{font-size:10px;padding:10px 12px}#navbar{top:8px}.section-wheel{margin:22px auto}.dial-track i{transform:translate(-50%,-50%) rotate(var(--tick)) translateY(-29vw)}}
+@media(prefers-reduced-motion:reduce){.dial-track,.dial-link{transition:none}.dial-dialog::backdrop{backdrop-filter:none}}
