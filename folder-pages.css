@@ -1,0 +1,9 @@
+.folder-routing main>.divider{display:none}
+.folder-routing main>section:not(.route-active),.folder-routing main>header:not(.route-active){display:none!important}
+.folder-routing .folder-introduction .folder-role,.folder-routing .folder-introduction .folder-summary,.folder-routing .folder-introduction .availability,.folder-routing .folder-work-link{display:none}
+.folder-routing .folder-introduction::after{content:'Open the folder to explore my portfolio.';display:block;font-size:16px;line-height:1.6;color:var(--muted);margin-top:25px;max-width:330px}
+.folder-routing .folder-home-footer a{display:none}
+.folder-page-back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:28px;padding:10px 18px;background:var(--bg);box-shadow:var(--raised-small);border-radius:18px;font-size:12px;font-weight:600}
+.folder-page-back:hover{box-shadow:var(--inset)}
+.folder-routing main>section.route-active{min-height:65vh;padding-top:35px}
+@media(prefers-reduced-motion:reduce){.folder-page-back{transition:none}}

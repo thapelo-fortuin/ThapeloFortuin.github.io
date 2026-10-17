@@ -48,7 +48,8 @@
   }
   trigger.addEventListener('click', () => {
     const visible = items.map(([id], index) => ({index, distance: Math.abs(document.getElementById(id).getBoundingClientRect().top - 100)})).sort((a,b) => a.distance - b.distance)[0];
-    active = visible.index;preview(active);savedOverflow = document.body.style.overflow;
+    const routeIndex = items.findIndex(([id]) => `#${id}` === location.hash);
+    active = routeIndex >= 0 ? routeIndex : visible.index;preview(active);savedOverflow = document.body.style.overflow;
     dialog.showModal();document.body.style.overflow = 'hidden';trigger.setAttribute('aria-expanded', 'true');
     dialog.querySelector('.dial-close').focus();
   });
