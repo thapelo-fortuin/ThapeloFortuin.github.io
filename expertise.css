@@ -14,4 +14,10 @@
 .expertise-mentoring{margin-top:35px;border-radius:22px;box-shadow:var(--inset);padding:28px}
 .expertise-mentoring h3{margin-top:0;font-size:23px}
 .expertise-mentoring p{max-width:900px}
+.beeftech-poster{background:linear-gradient(140deg,#233e31,#668953);color:#f4efd7}
+.beeftech-field{display:flex;gap:12px;transform:skewY(-9deg);padding:16px 0}
+.beeftech-field i{height:55px;flex:1;border:1px solid #b7ca9b;background:#aec78a25;border-radius:6px}
+.dw2026-poster{background:linear-gradient(140deg,#172e4d,#426488);color:#eef4ff}
+.dw2026-flow{display:flex;gap:8px;padding:18px 0}
+.dw2026-flow span{font-size:10px;flex:1;padding:16px 7px;border:1px solid #bad0ed80;text-align:center;background:#a8c5eb15;border-radius:6px}
 @media(max-width:700px){.expertise-roles{grid-template-columns:1fr;gap:24px}.expertise.expertise-detail{padding:30px 0 45px}.expertise-detail .expertise-roles article{padding:23px}.expertise-detail h3{font-size:25px}.expertise-detail .expertise-intro>p{font-size:15px}.expertise-mentoring{padding:23px}}
